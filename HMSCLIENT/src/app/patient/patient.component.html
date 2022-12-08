@@ -1,0 +1,28 @@
+<div class="container" style="text-align: center;">
+    <button type="button" (click)="getPatients()"> get data</button>
+   
+
+<table border ="1" style="margin-left: auto;margin-right: auto;" >
+    <thead>
+        <tr>
+            <th>Patient Id</th>
+            <th>Patient FileId</th>
+            <th>PatientName</th>
+            <th>Age</th>
+            <th>PhoneNo</th>
+        
+        </tr>
+    
+        <tr *ngFor="let pf of patfile">
+            <td>{{pf.patient.patientId}}</td>
+            <td><a [routerLink]="['/patientfiledetails',pf.patientFileId]">{{pf.patientFileId}}</a></td>
+            <!-- <td>{{pf.patientFileId}}</td> -->
+            <td>{{pf.patient.patientName}}</td>
+            <td>{{pf.patient.age}}</td>
+            <td>{{pf.patient.phoneNo}}</td>
+            
+        </tr>
+    </thead>
+</table>
+
+</div>
